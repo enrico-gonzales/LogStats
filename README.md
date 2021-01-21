@@ -33,6 +33,6 @@ Once built, from the `target` folder under the project root run:
 where `filename` is the full or relative path to the log file to be processes and analyzed.
 
 E.g.: 
-On *nix systems: `java -jar logstats-1.0.jar ../src/test/resources/manual-test.log`
-On Win systems: `java -jar logstats-1.0.jar ..\src\test\resources\manual-test.log`
+* On *nix systems: `java -jar logstats-1.0.jar ../src/test/resources/manual-test.log`
+* On Win systems: `java -jar logstats-1.0.jar ..\src\test\resources\manual-test.log`
 
