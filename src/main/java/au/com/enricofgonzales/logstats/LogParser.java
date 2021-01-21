@@ -17,8 +17,7 @@ public class LogParser {
         regexPattern = Pattern.compile(LOG_LINE_PARSING_REGEX);
     }
 
-    public void parseFile(String filename, Consumer<LogLine> lineConsumer,
-                          Consumer<InvalidLogLineException> lineExceptionConsumer) throws IOException {
+    public void parseFile(String filename, Consumer<LogLine> lineConsumer, Consumer<InvalidLogLineException> lineExceptionConsumer) throws IOException {
         Files.lines(Paths.get(filename)).forEach(line -> {
             // ignore empty lines (if any)
             if (line.trim().length() == 0) return;
