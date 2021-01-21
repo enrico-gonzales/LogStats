@@ -41,9 +41,9 @@ public class LogStats {
                 .takeWhile(entry -> {
                     // this is to make sure that ties are all reported if needed (for example, 6 urls tied at 1st place
                     // should all be returned even if top < 6)
-                    boolean condition = counter.getAndIncrement() < top || entry.getValue() == previousValue.get();
+                    boolean keepGoing = counter.getAndIncrement() < top || entry.getValue() == previousValue.get();
                     previousValue.set(entry.getValue());
-                    return condition;
+                    return keepGoing;
                 })
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
     }
